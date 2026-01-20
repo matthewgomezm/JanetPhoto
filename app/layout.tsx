@@ -1,16 +1,20 @@
 import './globals.css';
 import { Raleway } from 'next/font/google';
 import Link from 'next/link';
+import { Analytics } from "@vercel/analytics/next"
 
 const raleway = Raleway({ 
   subsets: ['latin'],
-  weight: ['300', '400'],
+  weight: ['300','400'],
   display: 'swap',
 });
 
 export const metadata = {
   title: 'Janet Zhang Media',
   description: 'Janet Zhang Media Portfolio',
+  icons: {
+    icon: '/images/blackCamera.png',
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={raleway.className}>
       <body>
-        
         <header className="header">
           <div className="WebLogo">
             <h1>Janet Zhang Media</h1>
@@ -54,6 +57,7 @@ export default function RootLayout({
              <p> Contact me here: (972) 202 6768</p>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
